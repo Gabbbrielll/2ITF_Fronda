@@ -29,76 +29,94 @@
         $salary = $_POST['salary'];
         $type = $_POST['type'];
         $AnnualSalary = $salary * 12;
-        
-        
-            if ($_POST['type'] == "bi-Monthly") {
-                $salary = $salary * 2;
-                $salary = $salary;
-                if ($salary <= 250000) {
+
+                if ($_POST['type'] == "bi-Monthly") {
+               $AnnualSalary = ($salary * 12) * 2;
+
+                if ($AnnualSalary <= 250000) {
                     $finalsalary = 0;
-                    $AnnualTax = $finalsalary * 12;
+                    $MonthlyTax = $finalsalary * 12;
                 }
-                else if ($salary <= 400000 && $salary > 250000) {
-                    $finalsalary = $salary * 0.2;
-                    $AnnualTax = $finalsalary * 12;
+                else if ($AnnualSalary <= 400000 && $AnnualSalary > 250000) {
+                    $Excess = $AnnualSalary - 250000;
+                    $finalsalary = $Excess * 0.2 ;
+                    $MonthlyTax = $finalsalary / 12 ;
                 }
-                else if ($salary <= 800000 && $salary > 400000) {
-                    $finalsalary = $salary * 0.25 - 30000;
-                    $AnnualTax = $finalsalary * 12;
+                else if ($AnnualSalary <= 800000 && $AnnualSalary > 400000) {
+                    $Excess = $AnnualSalary - 400000;
+                    $finalsalary = $Excess * 0.25;
+                    $Excesstwo = $finalsalary + 30000;
+                    $MonthlyTax = $Excesstwo / 12;
                 }
-                else if ($salary <= 2000000 && $salary > 800000) {
-                    $finalsalary = $salary * 0.3 - 130000;
-                    $AnnualTax = $finalsalary * 12;
+                else if ($AnnualSalary <= 2000000 && $AnnualSalary > 800000) {
+                    $Excess = $AnnualSalary - 800000;
+                    $finalsalary = $Excess * 0.3;
+                    $Excesstwo = $finalsalary + 130000;
+                    $MonthlyTax = $Excesstwo / 12;
                 }
-                else if ($salary <= 8000000 && $salary > 2000000) {
-                    $finalsalary = $salary * 0.32 - 490000;
-                    $AnnualTax = $finalsalary * 12;
+                else if ($AnnualSalary <= 8000000 && $AnnualSalary > 2000000) {
+                    $Excess = $AnnualSalary - 2000000;
+                    $finalsalary = $Excess * 0.32;
+                    $Excesstwo = $finalsalary + 490000;
+                    $MonthlyTax = $Excesstwo / 12;
                 }
-                else if ($salary > 8000000) {
-                    $finalsalary = $salary * 0.35 - 2410000;
-                    $AnnualTax = $finalsalary * 12;
+                else if ($AnnualSalary > 8000000) {
+                    $Excess = $AnnualSalary - 8000000;
+                    $finalsalary = $Excess * 0.35;
+                    $Excesstwo = $finalsalary + 2410000;
+                    $MonthlyTax = $Excesstwo / 12;
                 }  
 
                 echo "Monthly Salary: " . $salary . "<br>"; 
-                echo "Monthly Tax: ". $finalsalary . "<br>";
-                echo "Annual Salary: " . $AnnualSalary . "<br>";
-                echo "Annual Tax: " . $AnnualTax . "<BR>";
-
+                echo "Annual Salary: " . $AnnualSalary  . "<br>";
+                echo "Annual Tax: ". $Excesstwo  . "<br>";
+                echo "Monthly Tax: " . $MonthlyTax  . "<BR>";
+                
 
             } else if ($_POST['type'] == "monthly") {
-                $salary = $salary;
-                if ($salary <= 250000) {
+            
+                if ($AnnualSalary <= 250000) {
                     $finalsalary = 0;
-                    $AnnualTax = $finalsalary * 12;
+                    $Excesstwo = $finalsalary;
+                    $MonthlyTax = $finalsalary / 12;
                 }
-                else if ($salary <= 400000 && $salary > 250000) {
-                    $finalsalary = $salary * 0.2;
-                    $AnnualTax = $finalsalary * 12;
+                else if ($AnnualSalary <= 400000 && $AnnualSalary > 250000) {
+                    $Excess = $AnnualSalary - 250000;
+                    $finalsalary = $Excess * 0.2 ;
+                    $Excesstwo = $finalsalary;
+                    $MonthlyTax = $finalsalary / 12 ;
                 }
-                else if ($salary <= 800000 && $salary > 400000) {
-                    $finalsalary = $salary * 0.25 - 30000;
-                    $AnnualTax = $finalsalary * 12;
+                else if ($AnnualSalary <= 800000 && $AnnualSalary > 400000) {
+                    $Excess = $AnnualSalary - 400000;
+                    $finalsalary = $Excess * 0.25;
+                    $Excesstwo = $finalsalary + 30000;
+                    $MonthlyTax = $Excesstwo / 12;
                 }
-                else if ($salary <= 2000000 && $salary > 800000) {
-                    $finalsalary = $salary * 0.3 - 130000;
-                    $AnnualTax = $finalsalary * 12;
+                else if ($AnnualSalary <= 2000000 && $AnnualSalary > 800000) {
+                    $Excess = $AnnualSalary - 800000;
+                    $finalsalary = $Excess * 0.3;
+                    $Excesstwo = $finalsalary + 130000;
+                    $MonthlyTax = $Excesstwo / 12;
                 }
-                else if ($salary <= 8000000 && $salary > 2000000) {
-                    $finalsalary = $salary * 0.32 - 490000;
-                    $AnnualTax = $finalsalary * 12;
+                else if ($AnnualSalary <= 8000000 && $AnnualSalary > 2000000) {
+                    $Excess = $AnnualSalary - 2000000;
+                    $finalsalary = $Excess * 0.32;
+                    $Excesstwo = $finalsalary + 490000;
+                    $MonthlyTax = $Excesstwo / 12;
                 }
-                else if ($salary > 8000000) {
-                    $finalsalary = $salary * 0.35 - 2410000;
-                    $AnnualTax = $finalsalary * 12;
+                else if ($AnnualSalary > 8000000) {
+                    $Excess = $AnnualSalary - 8000000;
+                    $finalsalary = $Excess * 0.35;
+                    $Excesstwo = $finalsalary + 2410000;
+                    $MonthlyTax = $Excesstwo / 12;
                 }  
 
                 echo "Monthly Salary: " . $salary . "<br>"; 
-                echo "Monthly Tax: ". $finalsalary . "<br>";
                 echo "Annual Salary: " . $AnnualSalary . "<br>";
-                echo "Annual Tax: " . $AnnualTax . "<BR>";
+                echo "Annual Tax: ". $Excesstwo . "<br>";
+                echo "Monthly Tax: " . $MonthlyTax . "<BR>";
             }
-        
-    }     
+        }
     ?>
 
     <center>
@@ -119,8 +137,6 @@
             </p>
 
             <input type="submit" value="submit" name="submit">
-            
-
 
         </form>
         </table>
