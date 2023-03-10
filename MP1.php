@@ -35,11 +35,13 @@
 
                 if ($AnnualSalary <= 250000) {
                     $finalsalary = 0;
+                    $Excesstwo = $finalsalary;
                     $MonthlyTax = $finalsalary * 12;
                 }
                 else if ($AnnualSalary <= 400000 && $AnnualSalary > 250000) {
                     $Excess = $AnnualSalary - 250000;
                     $finalsalary = $Excess * 0.2 ;
+                    $Excesstwo = $finalsalary;
                     $MonthlyTax = $finalsalary / 12 ;
                 }
                 else if ($AnnualSalary <= 800000 && $AnnualSalary > 400000) {
