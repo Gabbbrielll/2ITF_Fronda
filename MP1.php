@@ -69,7 +69,7 @@
                     $MonthlyTax = $Excesstwo / 12;
                 }  
 
-                echo "Monthly Salary: " . $salary . "<br>"; 
+                echo "Monthly Salary: " . $salary * 2  . "<br>"; 
                 echo "Annual Salary: " . $AnnualSalary  . "<br>";
                 echo "Annual Tax: ". $Excesstwo  . "<br>";
                 echo "Monthly Tax: " . $MonthlyTax  . "<BR>";
